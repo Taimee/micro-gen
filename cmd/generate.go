@@ -11,8 +11,8 @@ import (
 func Generate(c *cli.Context) {
 	flag.Parse()
 	args := flag.Args()
-	name := args[0]
-	action := args[1]
+	name := args[1]
+	action := args[2]
 	err := generator.Handler(name, action)
 	if err != nil {
 		log.Fatal(err)

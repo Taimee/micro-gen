@@ -8,7 +8,7 @@ import (
 func Handler(name string, action string) error {
 	f := NewFile("handlers")
 	f.Type().Id(strcase.ToCamel(name) + "Handler").Interface(
-		Id(action).Params(
+		Id(strcase.ToCamel(action)).Params(
 			Id("c").Id("interfaces.Context"),
 		).Params(
 			Id("err").Id("error"),

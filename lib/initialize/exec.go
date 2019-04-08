@@ -17,6 +17,14 @@ func Exec() error {
 		return err
 	}
 
+	if err := os.MkdirAll("applications/usecases/inputs/", 0777); err != nil {
+		return err
+	}
+
+	if err := os.MkdirAll("applications/usecases/outputs", 0777); err != nil {
+		return err
+	}
+
 	if err := os.MkdirAll("applications/interactors", 0777); err != nil {
 		return err
 	}
